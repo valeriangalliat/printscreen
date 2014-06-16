@@ -1,0 +1,48 @@
+#!/bin/sh -e
+
+readonly PROGNAME=$(basename "$0")
+readonly PROGDIR=$(dirname "$(readlink -f "$0")")
+
+help() {
+    man "$PROGDIR/man/printscreen.1"
+}
+
+notify() {
+    if command -v notify-send > /dev/null; then
+        notify-send "$@"
+    fi
+}
+
+main() {
+    # Asking for help
+    if [ "$1" = '-h' ] || [ "$1" = "--help" ]; then
+        help
+        return
+    fi
+
+    # The first argument is not a valid command
+    if ! command -v "$1" > /dev/null; then
+        help
+        return 1
+    fi
+
+    command=$1; shift
+
+    #
+    # Sleep before running scrot(1), otherwise the program is unable to grab
+    # the mouse pointer if needed.
+    #
+    # See <https://bbs.archlinux.org/viewtopic.php?pid=1391992#p1391992>.
+    #
+    sleep .1
+
+    # Capture command output
+    if data=$(scrot "$@" -e "$command \$f; rm \$f" 2>&1); then
+        notify "Screenshot success: $data"
+        echo "$data" | xclip
+    else
+        notify "Screenshot error: $data"
+    fi
+}
+
+main "$@"
