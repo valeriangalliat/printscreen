@@ -20,9 +20,15 @@ main() {
         return
     fi
 
-    # The first argument is not a valid command
-    if ! command -v "$1" > /dev/null; then
-        help
+    #
+    # The first argument is not a valid command.
+    #
+    # The `-V` option for `command` will cause it to output an error
+    # message to `stdin` if the command is not found. Otherwise an
+    # information message is printed but here I just discard it.
+    #
+    if ! error=$(command -V "$1"); then
+        echo "$error" >&2
         return 1
     fi
 
