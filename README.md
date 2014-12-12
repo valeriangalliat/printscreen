@@ -1,18 +1,18 @@
-PrintScreen
+printscreen
 ===========
 
-**PrintScreen** is a screenshot tool to execute a custom action after
-taking a screenshot, and optionally send a notification.
+printscreen is a screenshot tool to execute a custom action after taking
+a screenshot, and optionally send a notification.
 
-See the [manpage](https://valeriangalliat.github.io/printscreen/) for more
+See the [man page](https://valeriangalliat.github.io/printscreen/) for more
 details.
 
 Dependencies
 ------------
 
-* `scrot`
-* `xclip`
-* `notify-send` (optional)
+* scrot
+* xclip
+* libnotify (optional, for `notify-send`)
 
 Installation
 ------------

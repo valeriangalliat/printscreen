@@ -81,44 +81,45 @@
 <h2 id="SYNOPSIS">SYNOPSIS</h2>
 
 <p><code>printscreen</code> <var>command</var> [<var>argument</var>...]<br />
-<code>printscreen</code> -h | --help</p>
+<code>printscreen</code> <code>-h</code> | <code>--help</code></p>
 
 <h2 id="DESCRIPTION">DESCRIPTION</h2>
 
-<p><strong>PrintScreen</strong> takes a screenshot with <span class="man-ref">scrot<span class="s">(1)</span></span> passing it given
+<p><strong>printscreen</strong> takes a screenshot with <span class="man-ref">scrot<span class="s">(1)</span></span> passing it given
 <var>argument</var>s, and passes generated file to <var>command</var>.</p>
 
-<p>The <span class="man-ref">scrot<span class="s">(1)</span></span> <code>-e</code> option will be used to execute <var>command</var>.</p>
+<p>The <strong>scrot</strong>(1) <code>-e</code> option will be used to execute <var>command</var>.</p>
 
-<p>If the command returns <code>0</code>, its output is copied to clipboard using <span class="man-ref">xclip<span class="s">(1)</span></span>.
-<span class="man-ref">xsel<span class="s">(1)</span></span> is not used because it seems not to work in <span class="man-ref">i3<span class="s">(1)</span></span> key bindings.</p>
+<p>If the command returns 0, its output is copied to clipboard using <strong>xclip</strong>(1).
+<strong>xsel</strong>(1) is not used because it seems not to work in <strong>i3</strong>(1) key bindings.</p>
 
-<p>If <span class="man-ref">notify-send<span class="s">(1)</span></span> is available, a notification will be sent after executing
-<span class="man-ref">scrot<span class="s">(1)</span></span>, with a success or error message.</p>
+<p>If <strong>notify-send</strong>(1) is available, a notification will be sent after executing
+<strong>scrot</strong>(1), with a success or error message.</p>
 
 <h2 id="OPTIONS">OPTIONS</h2>
 
 <dl>
-<dt><code>-h</code>, <code>--help</code></dt><dd>Show the manpage.</dd>
+<dt><code>-h</code>, <code>--help</code></dt><dd>Show the man page.</dd>
 </dl>
 
 
 <h2 id="EXAMPLES">EXAMPLES</h2>
 
-<p>Using <span class="man-ref">noelup<span class="s">(1)</span></span> to upload the screenshot, grabbed with cursor thanks to
-<span class="man-ref">scrot<span class="s">(1)</span></span>'s <code>-s</code> option.</p>
+<p>Using <strong>noelup</strong>(1) to upload the screenshot, grabbed with cursor thanks to
+<strong>scrot</strong>(1)'s <code>-s</code> option.</p>
 
-<pre><code class="sh">printscreen noelup -s
-</code></pre>
+<p><code>sh
+printscreen noelup -s
+</code></p>
 
 <h2 id="SEE-ALSO">SEE ALSO</h2>
 
-<p><span class="man-ref">scrot<span class="s">(1)</span></span>, <span class="man-ref">xclip<span class="s">(1)</span></span>, <span class="man-ref">notify-send<span class="s">(1)</span></span></p>
+<p><strong>scrot</strong>(1), <strong>xclip</strong>(1), <strong>notify-send</strong>(1)</p>
 
 
   <ol class='man-decor man-foot man foot'>
     <li class='tl'></li>
-    <li class='tc'>June 2014</li>
+    <li class='tc'>December 2014</li>
     <li class='tr'>printscreen(1)</li>
   </ol>
 

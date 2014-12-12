@@ -1,7 +1,7 @@
 .\" generated with Ronn/v0.7.3
 .\" http://github.com/rtomayko/ronn/tree/0.7.3
 .
-.TH "PRINTSCREEN" "1" "June 2014" "" ""
+.TH "PRINTSCREEN" "1" "December 2014" "" ""
 .
 .SH "NAME"
 \fBprintscreen\fR \- screenshot helper
@@ -10,38 +10,31 @@
 \fBprintscreen\fR \fIcommand\fR [\fIargument\fR\.\.\.]
 .
 .br
-\fBprintscreen\fR \-h | \-\-help
+\fBprintscreen\fR \fB\-h\fR | \fB\-\-help\fR
 .
 .SH "DESCRIPTION"
-\fBPrintScreen\fR takes a screenshot with scrot(1) passing it given \fIargument\fRs, and passes generated file to \fIcommand\fR\.
+\fBprintscreen\fR takes a screenshot with scrot(1) passing it given \fIargument\fRs, and passes generated file to \fIcommand\fR\.
 .
 .P
-The scrot(1) \fB\-e\fR option will be used to execute \fIcommand\fR\.
+The \fBscrot\fR(1) \fB\-e\fR option will be used to execute \fIcommand\fR\.
 .
 .P
-If the command returns \fB0\fR, its output is copied to clipboard using xclip(1)\. xsel(1) is not used because it seems not to work in i3(1) key bindings\.
+If the command returns 0, its output is copied to clipboard using \fBxclip\fR(1)\. \fBxsel\fR(1) is not used because it seems not to work in \fBi3\fR(1) key bindings\.
 .
 .P
-If notify\-send(1) is available, a notification will be sent after executing scrot(1), with a success or error message\.
+If \fBnotify\-send\fR(1) is available, a notification will be sent after executing \fBscrot\fR(1), with a success or error message\.
 .
 .SH "OPTIONS"
 .
 .TP
 \fB\-h\fR, \fB\-\-help\fR
-Show the manpage\.
+Show the man page\.
 .
 .SH "EXAMPLES"
-Using noelup(1) to upload the screenshot, grabbed with cursor thanks to scrot(1)\'s \fB\-s\fR option\.
+Using \fBnoelup\fR(1) to upload the screenshot, grabbed with cursor thanks to \fBscrot\fR(1)\'s \fB\-s\fR option\.
 .
-.IP "" 4
-.
-.nf
-
-printscreen noelup \-s
-.
-.fi
-.
-.IP "" 0
+.P
+\fBsh printscreen noelup \-s\fR
 .
 .SH "SEE ALSO"
-scrot(1), xclip(1), notify\-send(1)
+\fBscrot\fR(1), \fBxclip\fR(1), \fBnotify\-send\fR(1)
