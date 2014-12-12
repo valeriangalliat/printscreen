@@ -1,6 +1,11 @@
 printscreen
 ===========
 
+> Screenshot helper.
+
+Description
+-----------
+
 printscreen is a screenshot tool to execute a custom action after taking
 a screenshot, and optionally send a notification.
 
