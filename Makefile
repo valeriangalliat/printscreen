@@ -12,11 +12,11 @@ clean:
 
 man: $(ALLMAN)
 
-man/printscreen.1: man/printscreen.1.ronn
+man/%: man/%.ronn
 	$(RONN) $(RONNFLAGS) --roff $< > $@
 
-man/printscreen.1.html: man/printscreen.1.ronn
+man/%.html: man/%.ronn
 	$(RONN) $(RONNFLAGS) --html --style toc $< > $@
 
-man/printscreen.1.md: man/printscreen.1.ronn
+man/%.md: man/%.ronn
 	$(RONN) $(RONNFLAGS) --markdown $< > $@
