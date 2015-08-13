@@ -29,7 +29,7 @@ If **notify-send**(1) is available, a notification will be sent after executing
 Using **noelup**(1) to upload the screenshot, grabbed with cursor thanks to
 **scrot**(1)'s `-s` option.
 
-```sh
+```
 printscreen noelup -s
 ```
 
